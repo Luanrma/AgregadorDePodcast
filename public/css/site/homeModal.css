@@ -1,4 +1,4 @@
-#myModal {
+#modal-podcast {
     display: none; /* Hidden by default */
     position: absolute; /* Stay in place */
     width: 100%; /* Full width */
@@ -20,7 +20,7 @@
 }
 
 /* The Close Button */
-.close {
+#close-modal {
     color: #aaaaaa;
     font-size: 28px;
     font-weight: bold;
@@ -29,8 +29,8 @@
     right: 0.7rem;
 }
 
-.close:hover,
-.close:focus {
+#close-modal:hover,
+#close-modal:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -41,7 +41,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    
+
     overflow-y: scroll;
 
     border: 1px solid #888;
