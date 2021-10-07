@@ -40,12 +40,19 @@
             </div>
          </div>
 
-         <div id="myModal" class="modal">
-            <div class="modal-content">
+         <div id="myModal" >
+            <div id="modal-content">
 
                <div id="podcast-list">
+                  <div id="pagination">
+                     <button id="pgn-back" class="pagination-button"></button>
+                     <button id="pgn-actual" class="pagination-button"></button>
+                     <button id="pgn-next" class="pagination-button"></button>
+                     <button id="pgn-total" class="pagination-button"></button>
+                     
+                  </div>
                </div>
-
+               
                <div id="podcast-player-modal">
                   <span class="close">&times;</span>
                   <div id="modal-player">
@@ -58,6 +65,7 @@
 
       </div>
       <!-- Optional JavaScript -->
+      <script src="js/site/app.js"></script>
       <script src="js/site/home.js"></script>
       <script src="js/site/homeModal.js"></script>
       <script src="js/site/sideBar.js"></script>
