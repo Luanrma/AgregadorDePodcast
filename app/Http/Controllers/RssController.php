@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RssController extends Controller
+use function GuzzleHttp\json_decode;
+
+// (new RssController())->rssLoader();
+class RssController 
 {
     private $podcastList = [];
 
@@ -21,6 +24,12 @@ class RssController extends Controller
         $entries = array();
         foreach($feeds as $key => $feed) {
             $xml = simplexml_load_file($feed);
+           
+            foreach($xml->channel->item as $item) {
+                $itunes = $item->children('http://www.itunes.com/dtds/podcast-1.0.dtd');
+                $item->itunes->image = $itunes->image->attributes();
+            }
+
             $entries = array_merge($entries, $xml->xpath("//channel"));
         }
 
@@ -34,9 +43,11 @@ class RssController extends Controller
             if (!$a) {
                 mkdir(str_replace(' ', '', 'podcasts/'.strtolower($entry->title)));
             }
+
             $entry['podcastName'] = 'podcast-name-'.(string) str_replace(' ', '',strtolower($entry->title));
             $path = str_replace(' ', '', 'podcasts/'.strtolower($entry->title).'/'.strtolower($entry->title).'.json');
             $fp = fopen($path, 'w');
+            
             fwrite($fp, json_encode($entry));
             fclose($fp);
             

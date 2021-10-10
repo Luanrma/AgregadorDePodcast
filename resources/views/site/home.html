@@ -8,6 +8,8 @@
       <link rel="stylesheet" href="css/site/homeModal.css">
       <link rel="stylesheet" href="css/site/siderBar.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
       <title>Hello, world!</title>
    </head>
@@ -36,7 +38,9 @@
 
          <div class="row-flex">
             <div class="main-flex">
-
+               <div id="loading-home">
+                  <img src="assets/beanEater.gif" alt="loading">
+               </div>
             </div>
          </div>
 
@@ -45,19 +49,17 @@
 
                <div id="podcast-list">
                   <div id="pagination">
+                     <button id="pgn-start" class="pagination-button"></button>
                      <button id="pgn-back" class="pagination-button"></button>
                      <button id="pgn-actual" class="pagination-button"></button>
                      <button id="pgn-next" class="pagination-button"></button>
                      <button id="pgn-total" class="pagination-button"></button>
-                     
                   </div>
                </div>
                
                <div id="podcast-player-modal">
                   <span id="close-modal">X</span>
-                  <div id="modal-player">
-                     
-                  </div>
+                  <div id="modal-player"></div>
                </div>
                
             </div>
