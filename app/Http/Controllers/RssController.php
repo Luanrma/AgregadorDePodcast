@@ -18,7 +18,9 @@ class RssController
             "gugacast" => "https://www.omnycontent.com/d/playlist/0009b167-0e82-414e-91eb-aae8011fc66d/4f6d62c7-be7a-4d80-bc62-ace2013528cb/81c945fb-1467-45ed-b193-ace2013528de/podcast.rss",
             "theapologyline" => "https://rss.art19.com/apology-line",
             "99vidas" => "http://99vidas.com.br/feed.xml",
-            "naruhodo" => "https://feeds.simplecast.com/hwQVm5gy"
+            "naruhodo" => "https://feeds.simplecast.com/hwQVm5gy",
+            "dragoesDeGaragem" => "https://dragoesdegaragem.com/feed/",
+            "rapaduraCast" => "https://www.cinemacomrapadura.com.br/rapaduracast.xml"
         );
         
         $entries = array();

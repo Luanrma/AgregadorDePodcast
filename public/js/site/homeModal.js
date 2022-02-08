@@ -117,8 +117,7 @@ const playerControlModal = (item) => {
 
         let divImgControl = createNewElement('div', {class: 'modal-player-img'}, element => {
             const modalPlayerImg = modalPlayerControl.appendChild(element)
-            
-            //modalPlayerImg.innerHtml = `<img src="${item.itunes.image}  width='50%' height='50%' />"`
+        
             createNewElement('img', {src: item.itunes.image}, element => {
                 modalPlayerImg.appendChild(element)
             })
@@ -126,11 +125,10 @@ const playerControlModal = (item) => {
         
         let divAudioControl = createNewElement('div', {class: 'modal-audio-control'}, element => {
             let verifyModalAudioExists = document.querySelector('.modal-audio-control')
-
+            
             if(verifyModalAudioExists != null) {
                 verifyModalAudioExists.remove()
             }
-    
             const modalAudioControl = podcastPlayerModal.appendChild(element)
             createNewElement('audio', {id:'audioController', controls: true, hidden:true}, element => {
                 const audioControl = modalAudioControl.appendChild(element)
@@ -145,26 +143,20 @@ const playerControlModal = (item) => {
 
         const btnPauseOrPlay = createNewElement('img', {id: "btn-pause-play", src: "assets/icons/btn-play.png"}, element => {
             divAudioControl.appendChild(element)
-        })
-
-        btnPauseOrPlay.onclick = () => {    
-            if (play == false) {
-                play = true
-                pressPlay.play()
-                pressPauseOrPlay(btnPauseOrPlay, "assets/icons/btn-pause.png")
-            } else {
-                play = false
-                pressPlay.pause()
-                pressPauseOrPlay(btnPauseOrPlay, "assets/icons/btn-play.png")
+            element.onclick = () => {
+                if (play == false) {
+                    play = true
+                    pressPlay.play()
+                    btnPauseOrPlay.src = "assets/icons/btn-pause.png"
+                } else {
+                    play = false
+                    pressPlay.pause()
+                    btnPauseOrPlay.src = "assets/icons/btn-play.png"
+                }
             }
-        }
+        })
     })
 }
-
-const pressPauseOrPlay = (btnPauseOrPlay, iconPlayOrPause) => {
-    btnPauseOrPlay.src = iconPlayOrPause
-}
-
 
 // function dragElement(elmnt) {
 //   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

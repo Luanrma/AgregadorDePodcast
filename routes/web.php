@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@getHomePage');
-Route::get('/atualizarFeed', 'RssController@rssLoader');
+Route::middleware(['cors'])->group(function () {
+    Route::get('/atualizarFeed', 'RssController@rssLoader');
+});
 Route::get('/listarPodcasts', 'RssController@getPodcastFile');
 Route::get('/selecionarPodcast/{podcastName}', 'RssController@selectPodcast');

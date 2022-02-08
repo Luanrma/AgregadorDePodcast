@@ -14,7 +14,6 @@ const updatePodcastsFeed = async () => {
 }
 
 const podcastsFeed = async () => {
-    
     loading.style.display = 'block'
     let listarPodcasts = await fetch('/AgregadorDePodcasts/laravel/public/listarPodcasts')
     
